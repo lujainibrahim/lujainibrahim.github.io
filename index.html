@@ -17,6 +17,18 @@
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+            #more-content {
+            display: none;
+        }
+        #toggle-link {
+            color: #7A28CB; 
+            cursor: pointer;
+        }
+        #toggle-link:hover {
+            color: #3772FF; 
+        }
+  </style>
 
   <!-- Custom styles for this template -->
   <link href="css/the-big-picture.css" rel="stylesheet">
@@ -25,37 +37,6 @@
 </head>
 
 <body>
-  <!-- Navigation -->
-  <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container"> -->
-      <!-- <a class="navbar-brand" href="#">Lujain</a> -->
-      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="research.html">Research</a>
-          </li>
-          <li class="nav-item"> -->
-            <!-- <a class="nav-link" href="#">Other Work</a> -->
-          </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#">Media</a>
-          </li> -->
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#">Media/Consulting</a>
-          </li> -->
-        <!-- </ul>
-      </div>
-    </div>
-  </nav> -->
-
-  <!-- Page Content -->
   <section>
     <div class="container">
       <div class="row">
@@ -82,10 +63,17 @@
           <!-- <hr style="border: none; border-top: 1px dashed #999; width: 30%; margin: 0 auto;"> -->
           <section id="news">
             <p style="font-weight: 800;">news</p>
+            <p>* [May 2024] Started internship with Google DeepMind's Ethics Research Team, working on model safety evaluation</p>
+            <p>* [May 2024] New <a href="" target="_blank">preprint</a> on human interaction evaluations for LLM safety, risks, and harms</p>
+            <p>* [Apr 2024] New <a href="https://arxiv.org/pdf/2404.11370" target="_blank">preprint</a> on harms from AI user interface designs, presented in <a href="https://heal-workshop.github.io/" target="blank">CHI 2024 Workshop on Human-centered Evaluation and Auditing of Language Models</a></p>
             <p>* [Feb 2024] Launched <a href="https://whatsthealgorithm.com" target="_blank">"The Algorithm"</a> - a web-based game explainer of recommendation systems</p>
-            <p>* [Jan 2024] Joined <a href="https://governance.ai" target="_blank">Centre for Governance of AI</a> as a winter research fellow to work on contextually-relevant model safety evaluations</p>
-            <p>* [Nov 2023] Awarded <a href="https://www.oii.ox.ac.uk/news-events/dieter-schwarz-foundation-research-programme-project-awards-announced/" target="_blank">Dieter Schwarz Foundation-OII grant</a> for research on AI, Governments and Politics</p>
-            <p>* [Nov 2023] Presented work-in-progress game at <a href="https://professionals.idfa.nl/forum/4b515d44-f972-4dad-8fa2-88b2cd53e563/the-algorithm/" target="_blank">IDFA DocLab</a> in Amsterdam</p>
+            <div id="more-content">
+              <p>* [Jan 2024] Joined <a href="https://governance.ai" target="_blank">Centre for Governance of AI</a> as a winter research fellow to work on contextually-relevant model safety evaluations</p>
+              <p>* [Dec 2024] New <a href="https://osf.io/preprints/osf/ey8db" target="_blank">preprint</a> on the persuasiveness of role-playing large language models</p>
+              <p>* [Nov 2023] Awarded <a href="https://www.oii.ox.ac.uk/news-events/dieter-schwarz-foundation-research-programme-project-awards-announced/" target="_blank">Dieter Schwarz Foundation-OII grant</a> for research on AI, Government and Policy</p>
+              <p>* [Nov 2023] Presented work-in-progress game at <a href="https://professionals.idfa.nl/forum/4b515d44-f972-4dad-8fa2-88b2cd53e563/the-algorithm/" target="_blank">International Documentary Film Festival of Amsterdam DocLab</a></p>
+          </div>
+          <i><p id="toggle-link" onclick="toggleContent()">See more</p></i>    
           </section>
   <section id="contact"> 
           <p style="font-weight: 800;">contact</p>
@@ -114,6 +102,24 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById('more-content').style.display = 'none';
+        });
+
+        function toggleContent() {
+            const moreContent = document.getElementById('more-content');
+            const toggleLink = document.getElementById('toggle-link');
+            
+            if (moreContent.style.display === "none") {
+                moreContent.style.display = "block";
+                toggleLink.textContent = "See less";
+            } else {
+                moreContent.style.display = "none";
+                toggleLink.textContent = "See more";
+            }
+        }
+  </script>
 
 </body>
 
